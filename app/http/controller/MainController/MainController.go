@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 	"encoding/json"
-	"simple-golang-boilerplate-dev/database"
-	"simple-golang-boilerplate-dev/app/model/UserModel"
+	"gomen/database"
+	"gomen/app/model/UserModel"
 )
 
 func GetUser(res http.ResponseWriter, req *http.Request) {

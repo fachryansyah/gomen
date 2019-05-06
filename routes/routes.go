@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gorilla/mux"
-	"simple-golang-boilerplate-dev/app/http/controller/MainController"
+	"gomen/app/http/controller/MainController"
 )
 
 func SetRoutes() *mux.Router {
