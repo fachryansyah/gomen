@@ -1,6 +1,6 @@
 # Gomen
 
-Lorem ipsum
+Gomen is simple Microservice for building Web Service.
 
 ## Installation
 
