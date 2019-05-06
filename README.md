@@ -1,6 +1,6 @@
 # Gomen
 
-Gomen is simple Microservice for building Web Service.
+Gomen is simple Microservice for building Web Service with golang.
 
 ## Installation
 
