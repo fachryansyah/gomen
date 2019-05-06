@@ -20,8 +20,16 @@ go get github.com/go-sql-driver/mysql
 go get github.com/gorilla/mux
 ```
 
+Migrate the migration
+
 ```bash
-go build
+go run migration.go
+```
+
+Build the project
+
+```bash
+go build main.go
 ```
 
 ## Info
