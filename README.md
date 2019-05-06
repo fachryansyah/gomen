@@ -24,6 +24,9 @@ go get github.com/gorilla/mux
 go build
 ```
 
+## Info
+Gomen comes like MVC pattern, you can create logic bussines on /app/http/controller.
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
