@@ -20,6 +20,10 @@ go get github.com/go-sql-driver/mysql
 go get github.com/gorilla/mux
 ```
 
+```bash
+go get github.com/googollee/go-socket.io
+```
+
 Migrate the migration
 
 ```bash
