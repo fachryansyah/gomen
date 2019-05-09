@@ -21,8 +21,12 @@ func main() {
 	// originsOk := handlers.AllowedOrigins([]string{"*"})
 	// methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
 
-	// set routes for http
-	http.Handle("/", web.SetRoutes())
+	// set for static file
+    fs := http.FileServer(http.Dir("static"))
+	http.Handle("/", fs)
+
+	// set routes for api
+	http.Handle("/api/", web.SetRoutes())
 
 	// set routes for socket
 	http.Handle("/socket.io/", socket.SetRoutes())
