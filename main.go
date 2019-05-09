@@ -35,7 +35,5 @@ func main() {
 
 	log.Fatal(http.ListenAndServe(":9000", nil))
 
-
-
 	// log.Fatal(http.ListenAndServe(":9000", handlers.CORS(originsOk, headersOk, methodsOk)(routes.SetRoutes())))
 }
