@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"net/http"
 	// "github.com/gorilla/handlers"
-	"simple-golang-boilerplate-dev/routes"
+	"gomen/routes/web"
+	"gomen/routes/socket"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -20,9 +21,16 @@ func main() {
 	// originsOk := handlers.AllowedOrigins([]string{"*"})
 	// methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
 
-	http.Handle("/", routes.SetRoutes())
-	fmt.Println("Backend started on port : 9000")
-	log.Fatal(http.ListenAndServe(":9000", routes.SetRoutes()))
+	// set routes for http
+	http.Handle("/", web.SetRoutes())
+
+	// set routes for socket
+	http.Handle("/socket.io/", socket.SetRoutes())
+
+	fmt.Println("Backend server started on port : 9000")
+
+	log.Fatal(http.ListenAndServe(":9000", nil))
+
 
 
 	// log.Fatal(http.ListenAndServe(":9000", handlers.CORS(originsOk, headersOk, methodsOk)(routes.SetRoutes())))
