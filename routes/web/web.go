@@ -2,8 +2,8 @@ package web
 
 import (
 	"github.com/gorilla/mux"
-	"gomen-dev/app/http/middleware/ApiMiddleware"
-	"gomen-dev/app/http/controller/MainController"
+	"gomen/app/http/middleware/ApiMiddleware"
+	"gomen/app/http/controller/MainController"
 )
 
 func SetRoutes() *mux.Router {
@@ -13,8 +13,12 @@ func SetRoutes() *mux.Router {
 	/*
 		Masukkan Route kamu disini.
 	*/
-	router.HandleFunc("/user/get", ApiMiddleware.Auth(MainController.GetUser)).Methods("GET")
+	router.HandleFunc("/user/get", MainController.GetUser).Methods("GET")
 
+	/*
+		if you want to use middleware.
+	*/
+ 	router.HandleFunc("/auth/user/get", ApiMiddleware.Auth(MainController.GetUser)).Methods("GET")
 
 	return router
 }
