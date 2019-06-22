@@ -1,18 +1,21 @@
-package MainController
+package Controller
 
 import (
 	"log"
 	"net/http"
 	"encoding/json"
 	"gomen/database"
-	"gomen/app/model/UserModel"
+	"gomen/app/Models"
 )
 
-func GetUser(res http.ResponseWriter, req *http.Request) {
+type MainController struct{}
 
-	var users UserModel.User
-	var dataUsers []UserModel.User
-	var responseUser UserModel.Response
+
+func (MainController) GetUser(res http.ResponseWriter, req *http.Request) {
+
+	var users Models.User
+	var dataUsers []Models.User
+	var responseUser Models.Response
 
 	db := database.Connect()
 	defer db.Close()
@@ -37,4 +40,15 @@ func GetUser(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-type", "application/json")
 	json.NewEncoder(res).Encode(responseUser)
 
+}
+
+type Hello struct {
+	Message string
+}
+
+func (MainController) Test(res http.ResponseWriter, req *http.Request){
+	var message Hello
+	message.Message = "test gan"
+	res.Header().Set("Content-type", "application/json")
+	json.NewEncoder(res).Encode(message)
 }

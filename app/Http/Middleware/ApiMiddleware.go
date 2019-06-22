@@ -1,4 +1,4 @@
-package ApiMiddleware
+package Middleware
 
 import (
 	"fmt"
@@ -12,7 +12,9 @@ type Response struct{
 	Message string `json:message`
 }
 
-func Auth(next httpHandlerFunc) httpHandlerFunc {
+type ApiMiddleware struct {}
+
+func (ApiMiddleware) Auth(next httpHandlerFunc) httpHandlerFunc {
 	return func(res http.ResponseWriter, req *http.Request) {
 		token := req.Header.Get("token")
 		var response Response
