@@ -1,8 +1,8 @@
 package web
 
 import (
-	. "gomen/app/Http/Middleware"
 	. "gomen/app/Http/controllers"
+	. "gomen/app/Http/middleware"
 
 	"github.com/gorilla/mux"
 )
