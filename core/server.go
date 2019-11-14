@@ -1,18 +1,17 @@
-package main
+package core
 
 import (
 
 	// "github.com/gorilla/handlers"
-	"gomen/core"
-	"os"
-
-	_ "github.com/go-sql-driver/mysql"
+	"fmt"
+	"gomen/routes/socket"
+	"gomen/routes/web"
+	"log"
+	"net/http"
 )
 
-func main() {
-
-	args := os.Args[1:]
-	core.Command(args)
+// Serve : run the server
+func Serve() {
 
 	/*
 		CORS ORIGIN HEADER.
@@ -24,14 +23,14 @@ func main() {
 	// methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
 
 	// set routes for http
-	// http.Handle("/", web.SetRoutes())
+	http.Handle("/", web.SetRoutes())
 
 	// set routes for socket
-	// http.Handle("/socket.io/", socket.SetRoutes())
+	http.Handle("/socket.io/", socket.SetRoutes())
 
-	// fmt.Println("Backend server started on port : 9000")
+	fmt.Println("Backend server started on port : 9000")
 
-	// log.Fatal(http.ListenAndServe(":9000", nil))
+	log.Fatal(http.ListenAndServe(":9000", nil))
 
 	// log.Fatal(http.ListenAndServe(":9000", handlers.CORS(originsOk, headersOk, methodsOk)(routes.SetRoutes())))
 }
