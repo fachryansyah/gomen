@@ -1,39 +1,38 @@
 # Gomen
 
-Gomen is simple Microservice for building Web Service with golang.
+Gomen is simple boilerplate for building Microservice with golang.
 
 ## Installation
 
-Clone the project
+#### Clone the project
 
 ```bash
 git clone https://github.com/fachryansyah/simple-golang-boilerplate.git
 ```
 
-Install required library
+#### Install required library
 
+Mysql database
 ```bash
 go get github.com/go-sql-driver/mysql
 ```
-
+Router Web service
 ```bash
 go get github.com/gorilla/mux
 ```
-
+Socket Connection
 ```bash
 go get github.com/googollee/go-socket.io
 ```
-
-Migrate the migration
-
+Object Relation Mapping
 ```bash
-go run migration.go
+go get -u github.com/jinzhu/gorm
 ```
 
-Build the project
-
+#### Running
+Serving the project
 ```bash
-go build main.go
+go run main.go serve
 ```
 
 ## Info
