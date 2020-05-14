@@ -14,19 +14,32 @@ git clone https://github.com/fachryansyah/simple-golang-boilerplate.git
 
 Mysql database
 ```bash
-go get github.com/go-sql-driver/mysql
+$ go get github.com/go-sql-driver/mysql
 ```
 Router Web service
 ```bash
-go get github.com/gorilla/mux
+$ go get github.com/gorilla/mux
 ```
 Socket Connection
 ```bash
-go get github.com/googollee/go-socket.io
+$ go get github.com/googollee/go-socket.io
 ```
 Object Relation Mapping
 ```bash
-go get -u github.com/jinzhu/gorm
+$ go get -u github.com/jinzhu/gorm
+```
+Proto Gen
+```
+$ go get -u github.com/golang/protobuf/protoc-gen-go
+```
+GRPC
+```
+$ go get google.golang.org/grpc
+```
+Generate Proto file
+```
+$ cd app/services
+$ PATH=$PATH:$GOPATH/bin/ protoc --go_out=plugins=grpc:. *.proto
 ```
 
 #### Running

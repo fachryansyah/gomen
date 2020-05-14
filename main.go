@@ -3,8 +3,10 @@ package main
 import (
 
 	// "github.com/gorilla/handlers"
-	"gomen/core"
+
 	"os"
+
+	"gomen/core"
 
 	_ "github.com/go-sql-driver/mysql"
 )

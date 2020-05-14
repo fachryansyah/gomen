@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package services;
+
+import "empty.proto";
+
+message Post {
+  int64 id = 1;
+  string post = 2;
+  string slug = 3;
+  string content = 4;
+}
+
+message PostList {
+  repeated Post list = 1;
+}
+
+service Posts {
+    rpc Register(Post) returns (Empty) {}
+    rpc List(Empty) returns (PostList) {}
+}
