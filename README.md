@@ -47,7 +47,7 @@ go run main.go serve
 |```go run main.go migrate```|running auto migration|
 
 ## Info
-Gomen comes like MVC pattern, you can create logic bussines on /app/http/controller.
+Gomen comes like MVC pattern, you can create logic bussines on /app/controller and set the model of database on /app/models but without View
 
 ## Todo
 - [X] Create Folder & File Structure
