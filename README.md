@@ -1,6 +1,6 @@
 # Gomen
 
-Gomen is simple boilerplate for building Microservice with golang.
+Gomen is simple framework for building Microservice architecture with Go Language
 
 ## Installation
 
