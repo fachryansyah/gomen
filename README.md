@@ -54,9 +54,7 @@ Gomen comes like MVC pattern, you can create logic bussines on /app/controller a
 - [X] Added ORM Features
 - [X] CLI Commands
 - [X] Auto Migration
-- [ ] JWT Authentication
-- [ ] Auth Service Provider
-- [ ] File Storage Provider
+- [ ] API Gateway
 - [ ] Auto Generated Code
 
 ## Contributing
