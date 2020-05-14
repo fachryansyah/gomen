@@ -16,14 +16,6 @@ Mysql database
 ```bash
 $ go get github.com/go-sql-driver/mysql
 ```
-Router Web service
-```bash
-$ go get github.com/gorilla/mux
-```
-Socket Connection
-```bash
-$ go get github.com/googollee/go-socket.io
-```
 Object Relation Mapping
 ```bash
 $ go get -u github.com/jinzhu/gorm
