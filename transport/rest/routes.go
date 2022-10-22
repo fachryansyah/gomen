@@ -11,5 +11,6 @@ func NewRoute() *API {
 }
 
 func (a *API) Routes(r fiber.Router) {
+	r.Get("/", a.HelloWorld)
 	r.Post("/login", a.LoginHandler)
 }

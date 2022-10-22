@@ -9,6 +9,12 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+func (a *API) HelloWorld(c *fiber.Ctx) error {
+	result := map[string]string{
+		"hello": "world",
+	}
+	return c.Status(fiber.StatusOK).JSON(result)
+}
 func (a *API) LoginHandler(c *fiber.Ctx) error {
 	request := new(dtos.LoginRequest)
 
