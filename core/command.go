@@ -2,25 +2,17 @@ package core
 
 import (
 	"fmt"
-	"gomen/app/controllers"
-	"gomen/database"
 	"log"
-	"net"
-	"post-services/config"
+	"os"
 
-	service "gomen/app/services"
-
-	"google.golang.org/grpc"
+	"github.com/joho/godotenv"
 )
 
 // Command : run command line interface
 func Command(cmd []string) {
 	switch cmd[0] {
 	case "serve":
-		runRpcServer()
-		break
-	case "migrate":
-		database.Migrate()
+		serve()
 		break
 	case "test":
 		fmt.Println("test")
@@ -28,17 +20,14 @@ func Command(cmd []string) {
 	}
 }
 
-func runRpcServer() {
-	srv := grpc.NewServer()
-	var postSrv controllers.MainController
-	service.RegisterUsersServer(srv, postSrv)
-
-	log.Println("Starting GRPC Server at ", config.SERVICE_POST)
-
-	listen, err := net.Listen("tcp", config.SERVICE_POST)
+func serve() {
+	err := godotenv.Load(".env")
 	if err != nil {
-		log.Fatalf("could not listen to %s: %v", config.SERVICE_POST, err)
+		panic("Error loading .env file, please provid it by copying .env.example")
 	}
 
-	log.Fatal(srv.Serve(listen))
+	go InitializeGRPCServer()
+
+	restApi := InitializeRestAPIServer()
+	log.Fatal(restApi.Listen(":" + os.Getenv("API_PORT")))
 }
