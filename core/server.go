@@ -2,7 +2,7 @@ package core
 
 import (
 	"fmt"
-	"gomen/transport/api"
+	rest "gomen/transport/rest"
 	"net"
 	"os"
 
@@ -24,7 +24,7 @@ func InitializeRestAPIServer() *fiber.App {
 	apiEndpoint := app.Group("/api")
 	v1Endpoint := apiEndpoint.Group("/v1")
 
-	api := api.NewRoute()
+	api := rest.NewRoute()
 	api.Routes(v1Endpoint)
 
 	return app
