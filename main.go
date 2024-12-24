@@ -1,9 +1,6 @@
 package main
 
 import (
-
-	// "github.com/gorilla/handlers"
-
 	"os"
 
 	"gomen/core"
@@ -12,8 +9,6 @@ import (
 )
 
 func main() {
-
 	args := os.Args[1:]
 	core.Command(args)
-
 }

@@ -26,6 +26,10 @@ func serve() {
 		panic("Error loading .env file, please provid it by copying .env.example")
 	}
 
+	// Open database connection
+	InitializeDatabase()
+
+	// Running Grpc server
 	go InitializeGRPCServer()
 
 	restApi := InitializeRestAPIServer()

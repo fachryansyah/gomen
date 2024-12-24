@@ -18,7 +18,7 @@ func InitializeRestAPIServer() *fiber.App {
 		CaseSensitive: true,
 		StrictRouting: true,
 		ServerHeader:  "Fiber",
-		AppName:       "Gomen 1.1",
+		AppName:       "Gomen 1.2",
 	})
 
 	apiEndpoint := app.Group("/api")
